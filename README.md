@@ -22,6 +22,16 @@ Menu -> Cam2 (Page):
 #### Image
 https://github.com/radxa-build/rock-4c-plus/releases/download/20230312-1521/rock-4c-plus_debian_bullseye_cli_b55.img.xz
 
+#### librga
+
+```bash
+git clone https://github.com/airockchip/librga
+cd librga
+cp -a libs/Linux/gcc-aarch64/* /usr/local/lib/
+mkdir /usr/local/include/rga
+cp -a include/* /usr/local/include/rga/
+```
+
 #### mpp
 
 ```bash
@@ -33,4 +43,7 @@ cd mpp && cmake -B build && cmake --build build -j && cmake --install build
 ```bash
 apt-get build-dep ffmpeg
 git clone https://github.com/sreimers/ffmpeg-rk.git
+cd ffmpeg-rk 
+./configure --enable-rkmpp --enable-version3 --enable-libdrm
+make
 ```
