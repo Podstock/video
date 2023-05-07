@@ -19,8 +19,8 @@ Menu -> Cam2 (Page):
 
 
 ### radxa ROCK 4C Plus
-
-- Image https://github.com/radxa-build/rock-4c-plus/releases/download/20230312-1521/rock-4c-plus_debian_bullseye_cli_b55.img.xz
+#### Image
+https://github.com/radxa-build/rock-4c-plus/releases/download/20230312-1521/rock-4c-plus_debian_bullseye_cli_b55.img.xz
 
 #### mpp
 
