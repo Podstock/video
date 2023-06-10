@@ -2,8 +2,8 @@
 
 
 ## Equipment
-- 3x SONY Alpha ZV-E10
-- radxa ROCK 4C Plus
+- SONY Alpha ZV-E10
+- radxa ROCK 5B
 
 
 ### SONY Alpha ZV-E10
@@ -18,32 +18,17 @@ Menu -> Cam2 (Page):
 - (6) Zoom Range -> `ClearImage Zoom`
 
 
-### radxa ROCK 4C Plus
+### radxa ROCK 5B
 #### Image
-https://github.com/radxa-build/rock-4c-plus/releases/download/20230312-1521/rock-4c-plus_debian_bullseye_cli_b55.img.xz
+https://fi.mirror.armbian.de/archive/rock-5b/archive/Armbian_23.02.2_Rock-5b_jammy_legacy_5.10.110.img.xz
 
-#### librga
-
-```bash
-git clone https://github.com/airockchip/librga
-cd librga
-cp -a libs/Linux/gcc-aarch64/* /usr/local/lib/
-mkdir /usr/local/include/rga
-cp -a include/* /usr/local/include/rga/
 ```
-
-#### mpp
-
-```bash
-git clone https://github.com/rockchip-linux/mpp.git
-cd mpp && cmake -B build && cmake --build build -j && cmake --install build
-```
-#### ffmpeg-rk
-
-```bash
-apt-get build-dep ffmpeg
-git clone https://github.com/sreimers/ffmpeg-rk.git
-cd ffmpeg-rk 
-./configure --enable-rkmpp --enable-version3 --enable-libdrm
-make
+add-apt-repository ppa:liujianfeng1994/rockchip-multimedia
+apt update
+apt dist-upgrade
+apt install v4l-utils libv4l-rkmpp rockchip-multimedia-config librga2 librockchip-mpp1 
+apt install ffmpeg gstreamer1.0-rockchip1 gstreamer1.0-alsa gstreamer1.0-gl gstreamer1.0-x gstreamer1.0-plugins-good gstreamer1.0-plugins-bad
+apt install lm-sensors
+apt install lldpd
+apt remove unattended-upgrades
 ```
